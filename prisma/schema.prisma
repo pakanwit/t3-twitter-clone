@@ -6,12 +6,12 @@ generator client {
     previewFeatures = ["driverAdapters"]
 }
 
+// prisma/schema.prisma
 datasource db {
-    provider = "mysql"
-    url      = env("DATABASE_URL")
-
-    // If you have enabled foreign key constraints for your database, remove this line.
-    relationMode = "prisma"
+  provider  = "postgresql"
+  url  	    = env("DATABASE_URL")
+  // uncomment next line if you use Prisma <5.10
+  // directUrl = env("DATABASE_URL_UNPOOLED")
 }
 
 model Post {
